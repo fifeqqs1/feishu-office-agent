@@ -1,0 +1,22 @@
+# 在项目根目录（与 docker-compose.yml 同级）创建 .dockerignore
+src/frontend/node_modules/
+src/frontend/.pnpm/
+src/frontend/.npm/
+src/frontend/.yarn/
+src/frontend/package-lock.json
+src/frontend/pnpm-lock.yaml
+src/frontend/yarn.lock
+src/frontend/dist/
+src/frontend/.env*
+.env
+.env.*
+src/backend/agentchat/config.yaml
+src/backend/agentchat/config_ceshi.yaml
+src/backend/vector_db/
+src/backend/chroma_db/
+src/backend/memory_db/
+chroma_db/
+memory_db/
+*.sqlite
+*.sqlite3
+*.db

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local secrets and runtime configuration
+.env
+.env.*
+!*.example
+src/backend/agentchat/config.yaml
+src/backend/agentchat/config_ceshi.yaml
+
+# Local runtime data
+chat.html
+chroma_db/
+memory_db/
+src/backend/chroma_db/
+src/backend/memory_db/
+src/backend/vector_db/
+*.sqlite
+*.sqlite3
+*.db
+
+# Frontend
+node_modules/
+src/frontend/node_modules/
+src/frontend/dist/
+src/frontend/*.tsbuildinfo

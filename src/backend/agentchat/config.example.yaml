@@ -1,0 +1,136 @@
+# 服务配置
+server:
+  host: "0.0.0.0"
+  port: 7860
+  project_name: "Feishu Multi-Agent Assistant"
+  version: "2.4.0"
+
+# 数据库配置
+mysql:
+  endpoint: "mysql+pymysql://agentchat_user:agentchat_password@127.0.0.1:3306/agentchat"
+  async_endpoint: "mysql+aiomysql://agentchat_user:agentchat_password@127.0.0.1:3306/agentchat"
+
+# 缓存配置
+redis:
+  endpoint: "redis://127.0.0.1:6379"
+
+# 多模型服务配置
+multi_models:
+  conversation_model:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "qwen-plus"
+
+  tool_call_model:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "qwen-plus"
+
+  reasoning_model:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "qwen-plus"
+
+  text2image:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis"
+    model_name: "wanx2.0-t2i-turbo"
+
+  qwen_vl:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "qwen-vl-plus"
+
+  embedding:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "text-embedding-v3"
+
+  rerank:
+    api_key: "<YOUR_LLM_API_KEY>"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model_name: "gte-rerank-v2"
+
+# 外部工具配置
+tools:
+  weather:
+    api_key: "<YOUR_AMAP_API_KEY>"
+    endpoint: "https://restapi.amap.com/v3/weather/weatherInfo?parameters"
+
+  tavily:
+    api_key: "<YOUR_TAVILY_API_KEY>"
+
+  google:
+    api_key: "<YOUR_SERPAPI_API_KEY>"
+
+  delivery:
+    api_key: "<YOUR_ALIYUN_DELIVERY_API_KEY>"
+    endpoint: "https://qyexpress.market.alicloudapi.com/composite/queryexpress"
+
+  bocha:
+    api_key: "<YOUR_BOCHA_API_KEY>"
+    endpoint: "https://api.bochaai.com/v1/web-search"
+
+# RAG 配置
+rag:
+  enable_summary: false
+  enable_elasticsearch: false
+
+  retrival:
+    top_k: 5
+    min_score: 0.2
+
+  split:
+    chunk_size: 500
+    overlap_size: 100
+
+  elasticsearch:
+    hosts: "http://127.0.0.1:9200"
+
+  vector_db:
+    host: "127.0.0.1"
+    port: "19530"
+    mode: "chroma"
+
+# 对象存储配置
+storage:
+  mode: "minio"
+
+  oss:
+    access_key_id: "<YOUR_OSS_ACCESS_KEY_ID>"
+    access_key_secret: "<YOUR_OSS_ACCESS_KEY_SECRET>"
+    endpoint: "oss-cn-beijing.aliyuncs.com"
+    bucket_name: "agentchat"
+    base_url: "https://your-bucket.oss-cn-beijing.aliyuncs.com"
+
+  minio:
+    access_key_id: "<YOUR_MINIO_ACCESS_KEY_ID>"
+    access_key_secret: "<YOUR_MINIO_ACCESS_KEY_SECRET>"
+    endpoint: "127.0.0.1:9000"
+    bucket_name: "agentchat"
+    base_url: "http://127.0.0.1:9000/agentchat"
+
+# 默认资源配置
+default_config:
+  mcp_logo_url: "https://your-static-host/icons/mcp/mcp.png"
+  tool_logo_url: "https://your-static-host/icons/tools/default.png"
+  agent_logo_url: "https://your-static-host/icons/tools/bot.png"
+  mars_daily_url: "https://news.aibase.com/zh/news"
+  memory_collection_name: "memory"
+
+# 微信配置
+wechat_config:
+  token: "<YOUR_WECHAT_TOKEN>"
+  app_id: "<YOUR_WECHAT_APP_ID>"
+  secret: "<YOUR_WECHAT_SECRET>"
+
+# Langfuse 配置，可不填
+langfuse:
+  trace_name: "agentchat"
+  host: "https://cloud.langfuse.com"
+  public_key: "<YOUR_LANGFUSE_PUBLIC_KEY>"
+  secret_key: "<YOUR_LANGFUSE_SECRET_KEY>"
+  user_id: "<YOUR_LANGFUSE_USER_ID>"
+
+# 接口白名单路径
+whitelist_paths: ["/api/v1/login"]
