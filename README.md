@@ -57,7 +57,6 @@ CREATE DATABASE agentchat DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_
 
 ### 3. 配置后端
 
-公开仓库只提交 `config.example.yaml`，真实配置文件不会提交。
 
 ```bash
 cp src/backend/agentchat/config.example.yaml src/backend/agentchat/config.yaml
@@ -171,13 +170,6 @@ poetry run python -m lark_mcp.main --transport sse
 ├── requirements.txt
 └── README.md
 ```
-
-## 安全说明
-
-- 公开仓库只保留示例配置，不提交真实 API Key、数据库密码、飞书应用密钥、对象存储密钥。
-- 如果你曾经把真实密钥提交到旧仓库历史里，请立即在对应平台轮换密钥。
-- 上传 GitHub 时建议使用干净历史或经过历史清理的分支，避免旧提交继续携带敏感信息。
-- 本地运行产生的 `config.yaml`、`config_ceshi.yaml`、`*.sqlite3`、`*.db`、`vector_db/`、`node_modules/` 和 `dist/` 不应提交。
 
 ## 开发命令
 
