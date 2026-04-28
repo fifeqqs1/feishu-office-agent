@@ -1,6 +1,6 @@
 # Feishu Multi-Agent Assistant
 
-Feishu Multi-Agent Assistant 是一个面向飞书办公场景的多智能体助手平台，基于 OmniAgent 改造而来。它把对话式 AI、多 Agent 工作区、RAG 知识库、工具调用、MCP 扩展和飞书 OpenAPI 能力整合到一套 Web 应用里，适合用来搭建企业内部的办公自动化助手、知识库问答助手和任务规划型 Agent。
+Feishu Multi-Agent Assistant 是一个面向飞书办公场景的多智能体助手平台，它把对话式 AI、多 Agent 工作区、RAG 知识库、工具调用、MCP 扩展和飞书 OpenAPI 能力整合到一套 Web 应用里，适合用来搭建企业内部的办公自动化助手、知识库问答助手和任务规划型 Agent。
 
 项目包含一个 FastAPI 后端、一个 Vue 3 前端，以及内置的 Lark/Feishu MCP 工具服务。后端负责模型编排、会话、知识库、工具和 MCP 管理；前端提供工作区、聊天、知识库、模型、工具、数据看板等可视化页面。
 
